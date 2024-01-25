@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Medical Information Form</title>
+</head>
+<body>
+<div class="background"></div>
+<nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <form>
+      <div class="form-group">
+        <label for="age">Age:</label>
+          <input type="number" id="age" name="age" value="18">
+
+      </div>
+
+      <div class="form-group">
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="ecog">ECOG Baseline:</label>
+<select id="ecog" name="ecog">
+                    <option value="0">ECOG 0</option>
+                    <option value="0">ECOG 1</option>
+                    <option value="0">ECOG 2</option>
+                    <option value="0">ECOG 3</option>
+                    <option value="0">ECOG 4</option>
+                    <option value="0">ECOG 5</option>
+                </select>
+
+      </div>
+
+      <div class="form-group">
+        <label for="operationType">Operation Type:</label>
+<select id="opt" name="opertaion">
+                    <option value="option1" title="Complete removal of the kidney, often with the removal of surrounding tissues, sometimes including the adrenal gland and lymph nodes.">Radical Nephrectomy</option>
+                    <option value="option2" title="Also known as nephron-sparing surgery, where only the diseased part of the kidney is removed.">Partial Nephrectomy</option>
+                    <option value="option3" title="Minimally invasive surgery to remove all or part of a kidney using small incisions and a camera.">Laparoscopic Nephrectomy</option>
+                    <option value="option4" title="Surgery to remove the kidney as a way to reduce the number of cancer cells (tumor burden), usually before additional treatments.">Cytoreductive Nephrectomy</option>
+                    <option value="option5" title="Use of robotic systems to perform either partial or radical nephrectomy.">Robotic Left Nephrectomy
+                    </option>
+                    <option value="option6" title="Removal of the kidney and the ureter, typically for urothelial carcinoma of the upper urinary tract.">Robotic Right Nephrectomy
+                    </option>
+                    <option value="option7" title="Removal of the kidney and the ureter, typically for urothelial carcinoma of the upper urinary tract.">Nephroureterectomy</option>
+                    <option value="option8" titl="Removal of the kidney without the need for removing additional structures like the adrenal gland or lymph nodes.">Simple Nephrectomy</option>
+                    <option value="option9" title="Surgery performed to diagnose or better understand pathology.">Exploratory Surgery</option>
+                    <option value="option10" title="Surgery performed to relieve symptoms or complications from advanced disease without aiming for a cure.">Palliative Surgery</option>
+                    <option value="option11" title="A minimally invasive procedure used to block blood flow to the kidney or a kidney tumor.">Embolization</option>
+                    <option value="option11" title="Any other surgeries that do not fall into the above categories but are specified in the patient records.">Other Specified Surgery</option>
+                    <option value="option11" title="When surgery was not done or was declined by the patient for various reasons.">Not Performed or Declined</option>
+
+
+                </select>
+      </div>
+
+ <div class="form-group">
+        <label for="surgeryDate">Surgery Date:</label>
+        <input type="date" id="surgeryDate" name="surgeryDate">
+      </div>
+
+<div class="form-group">
+        <label for="drugType">Drug Type:</label>
+<select id="opt" name="opertaion">
+                    <option value="option1" title=" Sorafenib is a tyrosine kinase inhibitor (TKI) that targets several tyrosine kinases, including VEGFR and PDGFR, which are involved in tumor cell proliferation and angiogenesis.">Sorafenib (Nexavar)</option>
+                    <option value="option2" title="Also known as nephron-sparing surgery, where only the diseased part of the kidney is removed.">Partial Nephrectomy</option>
+                    <option value="option3" title=" Everolimus is an mTOR inhibitor, which works by inhibiting the mammalian target of rapamycin (mTOR), a protein that regulates cell growth, proliferation, and survival. ">Everolimus (Afinitor)</option>
+                    <option value="option4" title=" Pazopanib is a TKI that targets VEGFR, PDGFR, and c-Kit. ">Pazopanib (Votrient)</option>
+                    <option value="option5" title="Sunitinib is a multi-targeted TKI, inhibiting VEGFR, PDGFR, and other receptors.">Sunitinib (Sutent)</option>
+                    <option value="option6" title="Axitinib is a potent TKI that selectively inhibits VEGFR.">Axitinib (Inlyta)</option>
+                    <option value="option7" title=" Lenvatinib is a multi-targeted TKI, targeting VEGFR, FGFR, PDGFR, RET, and KIT. ">Lenvatinib (Lenvima)</option>
+                    <option value="option8" title="Temsirolimus is an inhibitor of mTOR and is used for the treatment of advanced RCC. ">Temsirolimus (Torisel)</option>
+                    <option value="option9" title="Nivolumab is an immunotherapy drug, a PD-1 inhibitor, which works by blocking the PD-1 protein on T cells, thereby boosting the immune response     		    against cancer cells. ">Nivolumab (Opdivo)</option>
+</select>
+</div>
+
+
+  <form id="adverseForm">
+    <button type="button" onclick="checkAdverseEffects()">Check Adverse Effects</button>
+  </form>
+
+      <div id="adverseEffectsContainer" style="display: none;">
+        <div class="form-group">
+          <label for="selectedEffects">Select Adverse Effects:</label>
+          <select id="selectedEffects" name="selectedEffects" multiple>
+            <!-- Add options for specific adverse effects -->
+            <option value="effect1">Adverse Effect 1</option>
+            <option value="effect2">Adverse Effect 2</option>
+            <!-- Add more options as needed -->
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="effectGrade">Grade of Adverse Effect:</label>
+          <input type="number" id="effectGrade" name="effectGrade" min="1" max="5">
+        </div>
+      </div>
+
+
+
+      <div class="form-group">
+        <label for="height">Height:</label>
+        <input type="text" id="height" name="height">
+      </div>
+
+      <div class="form-group">
+        <label for="weight">Weight:</label>
+        <input type="text" id="weight" name="weight">
+      </div>
+
+      <div class="form-group">
+        <label for="comorbidities">Comorbidities:</label>
+<select id="comorbidities" name="comorbidities">
+                    <option value="option1">Diabetes Mellitus</option>
+                    <option value="option2">Hypertension</option>
+                    <option value="option3">Asthma</option>
+                    <option value="option4">Hernia</option>
+                    <option value="option5">Tuberculosis</option>
+                    <option value="option6">DSM (Depressive Spectrum Disorders?)</option>
+                    <option value="option7">Hypothyroidism</option>
+                    <option value="option8">Chronic Kidney Disease</option>
+                    <option value="option9">Hypertension</option>
+                    <option value="option10">Hepatitis A</option>
+                    <option value="option11">Hepatitis B</option>
+                    <option value="option12">CABG (Coronary Artery Bypass Grafting)</option>
+                    <option value="option13">Acromegaly</option>
+                    <option value="option14">Dyslipidemia</option>
+                    <option value="option15">Spondylosis</option>
+                    <option value="option16">Heart Disease</option>
+                </select>
+      </div>
+
+      <div class="form-group">
+        <label for="addictions">Addictions:</label>
+<select id="addictions" name="addictions">
+                        <option value="option1">Tobacco</option>
+                        <option value="option2">Alchol</option>
+                        <option value="option3">Beedi</option>
+                        <option value="option4">Pan Masala</option>
+                        <option value="option5">Masheri</option>
+                        <option value="option6">Pan</option>
+                        <option value="option7">Cigarette</option>
+                        <option value="option8">Chronic ethanol</option>
+                        <option value="option9">Gutka</option>
+                        <option value="option10">Khaini</option>
+                    </select>
+      </div>
+
+      <div class="form-group">
+        <input type="submit" value="Submit">
+      </div>
+    </form>
+  </div>
+<script src="scripts.js"></script>
+</body>
+</html>
